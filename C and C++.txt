@@ -229,7 +229,7 @@
 
 26、Uncopyable 怎么实现？
     (tips：一种简单的实现是 在类中定义private 拷贝构造函数，但是这种方式不够清晰
-     更好的做法是 定义个 模板类，定义 pravate的拷贝构造函数，然后 子类 private 继承
+     更好的做法是 定义个 模板类，定义 private的拷贝构造函数，然后 子类 private 继承
      Uncopyable 类)
 
 27、C++里面的匿名namespace中的成员，相当于添加了static属性，因为编译器实际上会为每一个匿名的namespace
@@ -247,6 +247,8 @@
     其实，如果是由object来调用虚函数，那么函数可以inline；
     但是如果通过指针或者引用来访问，那么就走运行时多态特性了，即拿到类对象指针，访问虚函数表，
     解引用对应function pointer，整个过程中必须有call指令调用
+
+32、std::string 是二进制安全的，但需要注意，如果存储的是二进制数据，则禁止使用 length() size() c_str()等函数
 	
 	
 // debug

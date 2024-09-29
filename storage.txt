@@ -96,3 +96,16 @@
 22、在使用 smartctl 查询不到对应nvme设备的 smart-log 后，可以尝试使用 sudo nvme smart-log /dev/nvme 查看
 
 23、当前3D TLC是企业级固态存储的主要介质选择
+
+24、rsync是否支持增量复制，实现方案是啥？
+
+25、dd 和 rsync 哪个拷贝数据更快？
+(备注：dd 会全盘拷贝，包括文件系统级的元数据，但是rsync是走文件系统的，如果盘空载的话，rsync更快)
+
+26、还有一种压缩后，通过ssh备份的方案
+(备注：不压缩 tar cvf - folder_to_compress | ssh remote_user@your_remote_host 'tar xvf - -C /remote/directory' 
+压缩 tar czvf - folder_to_compress | ssh remote_user@your_remote_host 'tar xzvf - -C /remote/directory' )
+
+27、linux shred 工具可以完成磁盘上数据的安全擦除，但是数据的擦除效率不高(工具的iosize 默认64KB，应该可以调大)，20T盘的擦除带宽在90M。
+    HDD 支持sanitize特性也可以完成磁盘上数据擦除，工具是sg_sanitize
+    业界也有数据擦除规范（例如，美丽国国防部标准）
