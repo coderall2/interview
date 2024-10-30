@@ -26,6 +26,12 @@
 3、什么是VxLAN？
 	(tips：扩展版的VLAN，具体作用后面再补充)
 
+4、localhost和127.0.0.1有啥区别
+    (tips: 当前系统在初始化时会在/etc/hosts中预先配置好 localhost 将被解析到127.0.0.1，
+     如果手动删掉这一行，则会向DNS server请求解析localhosts。ping localhost 和 ping 127.0.0.1
+     的区别就是前者多了一步查询/etc/hosts的步骤，对应的ICMP数据包依然需要通过loopback网卡进行转发，
+     使用 tcpdump -i any 可以抓到对应的包)
+
 // UDP
 
 1、UDP 可以使用connect吗？
