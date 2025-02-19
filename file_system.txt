@@ -787,6 +787,11 @@
     最后问题怀疑点是 /procy 文件系统实现时有一把全局的mutex，怀疑大并发访问导致锁争用
     sysak 貌似开源了
 
+216、线上遇到机器内存紧张时，将clean的 exec page swap out，刚好对应磁盘访问慢，导致进程执行到
+    对应page时，触发page fault，但因为load慢，进而导致进程hang
+    (注：一个解决办法就是使用mmap 将对应binary以LOCKED模式映射到内存，但这里有个点就是会
+     将其他data段等内容也一并加入内存，这里的思路和上面vmtouch有点像)
+
 // block layer
 1、io_submit调用理论上是非阻塞的，但是如果执行sync写入，或者有meta data I/O，或者，设备中能提供的
     request数量有限，如果超过这个限制，也只能阻塞进入等待。
