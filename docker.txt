@@ -1,0 +1,8 @@
+// 记录docker相关知识点
+
+1、之前一直没有留意，在宿主机上使用ps 或 top 等命令是可以看到docker内进程信息的，但由于namespace隔离机制，
+   docker内部是无法看到宿主os的进程信息
+   
+2、怎么确认一个进程是由docker启动的？
+   (tips：从上面 1 中由ps 或 top 获取进程pid，然后cat /proc/${pid}/cgroup | grep docker，如果有输出，则可以确认进程
+   由docker创建； 另外，也可以使用 docker inspect 来反向验证)

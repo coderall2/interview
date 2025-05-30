@@ -79,6 +79,10 @@
 6、客户端可以创建多少个socket？(同一个IP地址)
 
 7、epoll poll select 区别与联系？
+	（tips：select实现了基本的IO多路复用，但是一是支持的fdset数量固定，受一个内核宏的控制
+	而且不好修改，之前有人尝试改过，但效果不佳，内核会panic，二是select基于遍历操作，时间复杂度是O(N)，
+	三是fdset需要频繁的在用户空间和内核空间进行拷贝；poll则针对待监听fd数量进行了优化；
+	epoll则针对上述三项分别进行了优化）
 
 8、epoll 中 LT ET 区别，使用场景？
     (tips：ET中，如果没有read socket到 EAGAIN，有可能导致整个处理过程阻塞，

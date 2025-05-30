@@ -1,0 +1,2 @@
+// 记录一些 awsome 网站
+1、linux-commits-search.typesense.org 内核commit搜索网站

@@ -1,0 +1,10 @@
+// record awsome git tool
+
+1、当远端git仓库不支持添加ssh public key的方式进行免密访问时，可以使用 git config --global credential.helper store 命令，在随后的git 命令中再次输入账密后，
+  git会自动记录账号 密码，之后的访问就可以免密
+  
+2、git  clone 下载代码hang住时，如果排除了基本的网络和权限原因外，还是不能发现问题，可以尝试
+   GIT_TRACE=1 git clone ${git_url} 
+   上述命令会展示git clone的细节，比 git clone --verbose 还要详细
+   
+3、查看一个被删除文件的log时，可以使用 git log --all --full-history -- <path to file> 
