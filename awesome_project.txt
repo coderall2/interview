@@ -2,3 +2,38 @@
 
 1、ext3grep 
     url: https://code.google.com/archive/p/ext3grep/source/default/source
+	
+2、 MooseFS 一个分布式存储实现
+	url: https://github.com/moosefs/moosefs
+	
+3、 JuiceFS 一个兼容POSIX的云存储代理
+	url: https://github.com/juicedata/juicefs
+	（主要实现特性：juicefs不仅仅是一个后端存储的代理，其本身针对大文件做了一层切分，并且引入了可配置的元数据管理层）
+	
+4、 winfsp 参考dokan，windows上fuse的新版本实现
+	url: https://github.com/winfsp/winfsp/tree/master
+
+5、 dokan 早期windows上fuse实现
+	url: https://github.com/dokan-dev/dokany
+
+6、 S3 开源fuse实现，当前在windows平台上已集成winfsp 
+	url: https://github.com/s3fs-fuse/s3fs-fuse
+
+7、 Windows原生支持的Linux虚拟机
+	url: https://github.com/microsoft/WSL
+	
+8、 rsync，一款命令行数据备份工具，可以参考数据校验，数据传输，以及基于chunk细粒度的数据同步算法，而不仅仅将视野局限于DRS
+	url: https://github.com/RsyncProject/rsync
+	
+8、 rclone，rsync的云端存储版本
+	url: https://github.com/rclone/rclone
+	
+9、 libuv，一个跨平台的异步IO框架，支持TCP、 UDP、 File IO、 File Event，当前主要应用于Node中
+	url: https://github.com/libuv/libuv
+	
+10、 Windows Driver Sample，Windows官方提供的驱动程序示例库，在里面可以看到多种驱动的源码
+	url: https://github.com/microsoft/Windows-driver-samples/tree/main
+	（tips: 可以借鉴FastFAT文件系统驱动）
+	
+11、 libfuse，用户态FUSE库，提升开发Linux用户态文件系统效率
+	url: https://github.com/libfuse/libfuse

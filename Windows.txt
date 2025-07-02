@@ -1,0 +1,7 @@
+// 记录Windows平台相关资料
+
+1、Windows上开发跨平台应用三件套 Cygwin Msys2 MinGW，其中Cygwin提供了Unix风格的bash命令行以及很多常用的工具，例如grep，awk，find这些，
+Msys2 在CygWin基础上提供了开发环境，包括包管理器pacman；MinGW的目标是在Windows环境上使用gcc工具链编译出native exe程序。
+结合这三者，可以让一个熟悉Linux的开发者无缝切换到Windows平台上开发。
+
+2、MinGW的实现中要考虑翻译Linux的系统调用，例如，fork，clone这些原生Linux system call在Windows上的实现

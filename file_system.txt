@@ -791,6 +791,9 @@
     对应page时，触发page fault，但因为load慢，进而导致进程hang
     (注：一个解决办法就是使用mmap 将对应binary以LOCKED模式映射到内存，但这里有个点就是会
      将其他data段等内容也一并加入内存，这里的思路和上面vmtouch有点像)
+	 
+// Windows NTFS
+1、介绍NTFS原理的书籍可以参考《Windows NT文件系统内幕》 《NTFS文件系统扇区存储探秘》 ，开源项目可以参考ntfs-3G，同时内核中也有对应的NTFS驱动代码
 
 // block layer
 1、io_submit调用理论上是非阻塞的，但是如果执行sync写入，或者有meta data I/O，或者，设备中能提供的
